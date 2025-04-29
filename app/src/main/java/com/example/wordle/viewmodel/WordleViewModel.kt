@@ -18,8 +18,6 @@ class WordleViewModel(application: Application) : AndroidViewModel(application) 
     val state: StateFlow<GameState> = _state
     private var cachedWords: List<String> = emptyList()
 
-    private var wordsRepository: WordsRepository? = null
-
     private val vibrationService = VibrationService(application.applicationContext)
 
     fun toggleVibration() {
@@ -31,8 +29,8 @@ class WordleViewModel(application: Application) : AndroidViewModel(application) 
     fun loadAndSetRandomWord(context: Context, fileName: String) {
         viewModelScope.launch {
             if(cachedWords.isEmpty()) {
-                wordsRepository = WordsRepository(context)
-                cachedWords = wordsRepository?.loadWords(fileName) ?: emptyList()
+                var wordsRepository = WordsRepository(context)
+                cachedWords = wordsRepository.loadWords(fileName)
             }
             val randomWord = cachedWords.random()
 

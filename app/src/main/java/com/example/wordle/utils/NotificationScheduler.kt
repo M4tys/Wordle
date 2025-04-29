@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit
 class NotificationScheduler {
 
     companion object {
-        private const val NOTIFICATION_HOUR = 20
-        private const val NOTIFICATION_MINUTE = 0
+        private const val NOTIFICATION_HOUR = 10
+        private const val NOTIFICATION_MINUTE = 15
         private const val WORK_TAG = "daily_wordle_notification"
 
         fun scheduleDailyNotification(context: Context) {

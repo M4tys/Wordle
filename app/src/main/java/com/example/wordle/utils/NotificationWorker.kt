@@ -24,7 +24,6 @@ class NotificationWorker(context: Context, params: WorkerParameters) : Worker(co
         val channelId = "wordle_reminder_channel"
         val notificationId = 1
 
-        // Utwórz Intent, który otworzy MainActivity po kliknięciu w powiadomienie
         val intent = Intent(applicationContext, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
@@ -58,8 +57,8 @@ class NotificationWorker(context: Context, params: WorkerParameters) : Worker(co
             .setContentTitle("Czas na Wordle!")
             .setContentText("Odgadnij słowa!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent) // Ustaw PendingIntent
-            .setAutoCancel(true) // Powiadomienie znika po kliknięciu
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
             .build()
 
         notificationManager.notify(notificationId, notification)

@@ -23,12 +23,4 @@ class WordsRepository(private val context: Context) {
         }
         return words.filter { it.length == 5 && it.all { char -> char.isUpperCase() } }
     }
-
-    fun getRandomWord(words: List<String>): String? {
-        return if (words.isNotEmpty()) {
-            words[Random.nextInt(words.size)]
-        } else {
-            null
-        }
-    }
 }

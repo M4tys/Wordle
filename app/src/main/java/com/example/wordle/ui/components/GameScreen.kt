@@ -31,7 +31,8 @@ fun GameScreen(
     }
 
     Column(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -41,6 +42,7 @@ fun GameScreen(
             isVibrationEnabled = isVibrationEnabled
         )
         WordleGrid(
+            modifier = Modifier.weight(1f),
             guesses = state.guesses,
             currentGuess = state.currentGuess,
             currentRow = state.currentRow,

@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -27,18 +26,19 @@ import com.example.wordle.viewmodel.LetterState
 
 @Composable
 fun WordleGrid(
+    modifier: Modifier = Modifier,
     guesses: List<List<Char?>>,
     currentGuess: List<Char?>,
     currentRow: Int,
     wordLength: Int,
     maxGuesses: Int,
-    letterStates: List<List<LetterState>>
+    letterStates: List<List<LetterState>>,
 ) {
     val cellSize = calculateCellSize(wordLength)
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(wordLength),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),

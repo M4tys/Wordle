@@ -4,7 +4,7 @@ data class GameState(
     val secretWord: String? = null,
     val currentGuess: List<Char?> = emptyList(),
     val guesses: List<List<Char?>> = emptyList(),
-    val letterStates: List<List<LetterState>> = emptyList(), // Nowa lista do przechowywania stanów liter
+    val letterStates: List<List<LetterState>> = emptyList(),
     val currentRow: Int = 0,
     val wordLength: Int = 5,
     val maxGuesses: Int = 6,

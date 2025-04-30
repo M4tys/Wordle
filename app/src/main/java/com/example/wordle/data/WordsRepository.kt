@@ -3,7 +3,6 @@ package com.example.wordle.data
 import android.content.Context
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import kotlin.random.Random
 
 class WordsRepository(private val context: Context) {
 

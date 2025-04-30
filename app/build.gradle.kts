@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.wordle"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -41,9 +41,8 @@ android {
 
 dependencies {
 
-    implementation ("androidx.work:work-runtime-ktx:2.7.1")
-    implementation ("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation(libs.work.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
